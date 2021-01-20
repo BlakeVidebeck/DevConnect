@@ -74,6 +74,7 @@ export const login = (email, password) => async dispatch => {
 	const body = JSON.stringify({ email, password });
 
 	try {
+		// get the token that is created from login route
 		const res = await axios.post('/api/auth', body, config);
 
 		dispatch({

@@ -17,7 +17,7 @@ const CreateProfile = ({ createProfile, history }) => {
 		facebook: '',
 		linkedin: '',
 		youtube: '',
-		instagram: ''
+		instagram: '',
 	});
 
 	const [displaySocialInputs, toggleSocialInputs] = useState(false);
@@ -34,7 +34,7 @@ const CreateProfile = ({ createProfile, history }) => {
 		facebook,
 		linkedin,
 		youtube,
-		instagram
+		instagram,
 	} = formData;
 
 	const onChange = e =>
@@ -221,7 +221,7 @@ const CreateProfile = ({ createProfile, history }) => {
 };
 
 CreateProfile.propTypes = {
-	createProfile: PropTypes.func.isRequired
+	createProfile: PropTypes.func.isRequired,
 };
 
 export default connect(null, { createProfile })(withRouter(CreateProfile));

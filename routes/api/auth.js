@@ -38,6 +38,7 @@ router.post(
 		const { email, password } = req.body;
 
 		try {
+			// find user from email entered
 			let user = await User.findOne({ email });
 
 			if (!user) {
@@ -53,7 +54,7 @@ router.post(
 					.status(400)
 					.json({ errors: [{ msg: 'Invalid Credentials' }] });
 			}
-
+			// send user id with token that is created
 			const payload = {
 				user: {
 					id: user.id
@@ -66,6 +67,7 @@ router.post(
 				{ expiresIn: 360000 },
 				(err, token) => {
 					if (err) throw err;
+					// return the token
 					res.json({ token });
 				}
 			);
